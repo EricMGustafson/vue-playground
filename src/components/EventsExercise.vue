@@ -26,7 +26,7 @@
             "greeting" property and pass its value into an alert().
           </p>
           <!-- add event listener to the button element -->
-          <button class="btn btn-primary m-2">Greet</button>
+          <button class="btn btn-primary m-2" @click="greet()">Greet</button>
         </div>
       </div>
     </div>
@@ -40,13 +40,17 @@ export default {
   name: "events-exercise",
   setup() {
     const state = reactive({
-      counter: 0
+      counter: 0,
       //add property called "counter"
+      greeting: 'Hello, World!'
       //add property called "greeting"
       //create a method called "greet"
     });
     return {
       state,
+      greet() {
+        alert(state.greeting)
+      }
       // Add your methods here
     };
   },
